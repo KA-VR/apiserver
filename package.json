@@ -10,7 +10,7 @@
     "test": "mocha test/browser.js test/**/*",
     "test:watch": "mocha tests/client/components/* --compilers js:babel-core/register --watch --reporter min",
     "lint": "eslint --quiet src/",
-    "start": "",
+    "start": "npm run watch-server & npm run dev-server",
     "watch-server": "babel --watch src/server -d dev/server"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "dictionary-scrape": "^0.1.2",
     "express": "^4.14.0",
     "google-search-scrape": "^0.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "openweather": "^0.4.0"
   }
 }
