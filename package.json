@@ -36,6 +36,7 @@
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "dictionary-scrape": "^0.1.2",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "google-search-scrape": "^0.2.5",
     "isomorphic-fetch": "^2.2.1",
