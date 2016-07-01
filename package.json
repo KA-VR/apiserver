@@ -40,6 +40,7 @@
     "google-search-scrape": "^0.2.5",
     "isomorphic-fetch": "^2.2.1",
     "openweather": "^0.4.0",
+    "redis": "^2.6.2",
     "text-calculator": "^1.1.0"
   }
 }
