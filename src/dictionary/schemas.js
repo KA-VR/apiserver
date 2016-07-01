@@ -1,21 +1,10 @@
 import mongoose from 'mongoose';
 
-const Schema = mongoose.schema;
-
-const wordSchema = new Schema({
-  partOfSpeech: String,
-  meanings: [
-    String,
-  ],
-  examples: [
-    String,
-  ],
-  synonyms: [
-    String,
-  ],
-  antonyms: [
-    String,
-  ],
+const wordSchema = mongoose.Schema({
+  name: String,
+  def: Array,
+  syn: Array,
+  ant: Array,
 });
 
 export default wordSchema;
