@@ -3,6 +3,7 @@ import dictionaryController from '../controllers/dictionaryController';
 import searchController from '../controllers/searchController';
 import weatherController from '../controllers/weatherController';
 import calculatorController from '../controllers/calculatorController';
+import mongoController from '../controllers/mongoController';
 
 const router = new Router();
 
@@ -17,5 +18,8 @@ router.route('/api/images/').post(searchController.getImages);
 router.route('/api/weather').post(weatherController.getWeather);
 
 router.route('/api/calculate').post(calculatorController.getCalculation);
+
+router.route('/api/writemongo').post(mongoController.writeWord);
+router.route('/api/searchmongo').post(mongoController.searchWord);
 
 export default router;
