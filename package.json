@@ -11,7 +11,7 @@
     "test:watch": "mocha tests/client/components/* --compilers js:babel-core/register --watch --reporter min",
     "lint": "eslint --quiet src/",
     "start": "npm run watch-server & npm run dev-server",
-    "watch-server": "babel --watch src/server -d dev/server"
+    "watch-server": "babel --watch src -d dev"
   },
   "repository": {
     "type": "git",
@@ -36,9 +36,11 @@
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "dictionary-scrape": "^0.1.2",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "google-search-scrape": "^0.2.5",
     "isomorphic-fetch": "^2.2.1",
+    "mongoose": "^4.5.3",
     "openweather": "^0.4.0",
     "text-calculator": "^1.1.0"
   }
