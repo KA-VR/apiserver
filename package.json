@@ -11,7 +11,7 @@
     "test:watch": "mocha tests/client/components/* --compilers js:babel-core/register --watch --reporter min",
     "lint": "eslint --quiet src/",
     "start": "npm run watch-server & npm run dev-server",
-    "watch-server": "babel --watch src/server -d dev/server"
+    "watch-server": "babel --watch src -d dev"
   },
   "repository": {
     "type": "git",
