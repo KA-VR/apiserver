@@ -5,6 +5,7 @@ import weatherController from '../controllers/weatherController';
 import calculatorController from '../controllers/calculatorController';
 import mongoController from '../controllers/mongoController';
 import youtubeController from '../controllers/youtubeController';
+import yelpController from '../controllers/yelpController';
 
 const router = new Router();
 
@@ -23,10 +24,8 @@ router.route('/api/calculate').post(calculatorController.getCalculation);
 router.route('/api/writemongo').post(mongoController.writeWord);
 router.route('/api/searchmongo').post(mongoController.searchWord);
 
-router.route('/api/searchyoutube').post(youtubeController.searchVideo);
+router.route('/api/youtube').post(youtubeController.searchVideo);
 
-router.route('/api/searchyelprestaurant').post(yelpController);
-router.route('/api/searchyelpbusiness').post(yelpController);
-router.route('/api/searchyelpphone').post(yelpController);
+router.route('/api/yelp').post(yelpController.getRestaurant);
 
 export default router;
