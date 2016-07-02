@@ -4,6 +4,7 @@ import searchController from '../controllers/searchController';
 import weatherController from '../controllers/weatherController';
 import calculatorController from '../controllers/calculatorController';
 import mongoController from '../controllers/mongoController';
+import youtubeController from '../controllers/youtubeController';
 
 const router = new Router();
 
@@ -21,5 +22,7 @@ router.route('/api/calculate').post(calculatorController.getCalculation);
 
 router.route('/api/writemongo').post(mongoController.writeWord);
 router.route('/api/searchmongo').post(mongoController.searchWord);
+
+router.route('/api/searchyoutube').post(youtubeController.searchVideo);
 
 export default router;
