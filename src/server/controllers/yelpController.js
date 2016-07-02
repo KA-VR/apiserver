@@ -18,7 +18,7 @@ const defaultParams = {
 };
 
 // Restaurant Search
-const getRestaurant = (req, res) => {
+const searchYelp = (req, res) => {
   const searchQuery = Object.keys(req.body).length ? req.body : defaultParams;
   yelp.search(searchQuery)
     .then(data => {
@@ -32,5 +32,5 @@ const getRestaurant = (req, res) => {
 };
 
 export default {
-  getRestaurant,
+  searchYelp,
 };

@@ -26,6 +26,6 @@ router.route('/api/searchmongo').post(mongoController.searchWord);
 
 router.route('/api/youtube').post(youtubeController.searchVideo);
 
-router.route('/api/yelp').post(yelpController.getRestaurant);
+router.route('/api/yelp').post(yelpController.searchYelp);
 
 export default router;
