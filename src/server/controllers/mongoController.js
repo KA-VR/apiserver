@@ -1,8 +1,5 @@
 import mongoose from 'mongoose';
-import helpers, {
-  saveWord,
-  findWord,
-} from '../../dictionary/helpers';
+import helpers from '../../dictionary/helpers';
 
 mongoose.connect('mongodb://localhost/dictionary');
 
@@ -25,7 +22,6 @@ const writeWord = (req, res) => {
     }
     res.send(result);
   });
-
 };
 
 const searchWord = (req, res) => {

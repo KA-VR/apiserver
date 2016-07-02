@@ -1,4 +1,3 @@
-import request from 'request';
 import YouTube from 'youtube-node';
 import dotenv from 'dotenv';
 
@@ -16,7 +15,6 @@ const searchVideo = (req, res) => {
     }
     res.send(JSON.stringify(result));
   });
-
 };
 
 export default { searchVideo };
