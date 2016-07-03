@@ -17,7 +17,9 @@ const searchVideo = (req, res) => {
       console.log(error);
     }
     console.log('result from youtube is: ', result);
-    res.send(JSON.stringify(result));
+    const videoId = 'https://www.youtube.com/embed/'.concat(result.items[0].id.videoId).concat('?autoplay=1');
+    console.log('result from youtube is: ', videoId);
+    res.send(videoId);
   });
 };
 
