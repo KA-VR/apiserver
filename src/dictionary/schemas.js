@@ -1,7 +1,8 @@
-import mongoose from 'mongoose';
-
 /* eslint-disable new-cap */
-const wordSchema = mongoose.Schema({
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+
+const wordSchema = new Schema({
   name: String,
   def: Array,
   syn: Array,
