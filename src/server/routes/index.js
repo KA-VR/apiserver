@@ -6,6 +6,7 @@ import calculatorController from '../controllers/calculatorController';
 import mongoController from '../controllers/mongoController';
 import youtubeController from '../controllers/youtubeController';
 import yelpController from '../controllers/yelpController';
+import redis from '../../dictionary/redisDictionary';
 
 const router = new Router();
 
@@ -27,5 +28,8 @@ router.route('/api/searchmongo').post(mongoController.searchWord);
 router.route('/api/youtube').post(youtubeController.searchVideo);
 
 router.route('/api/yelp').post(yelpController.searchYelp);
+
+router.route('/api/writeredis').post(redis.addWord);
+router.route('/api/searchredis').post(redis.searchWord);
 
 export default router;

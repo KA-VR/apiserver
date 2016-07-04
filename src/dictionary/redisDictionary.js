@@ -1,16 +1,44 @@
+/* eslint-disable no-console */
+import lruCache from 'lru-cache';
 import redis from 'redis';
 const db = redis.createClient();
 
+db.on('connect', () => {
+  console.log('I am connected to redis!');
+});
 
-// db.set(email, JSON.stringify(val), (error2, result2) => {
-//   if (error2) {
-//     console.log('error2: cannot set new user to name key', error2);
-//   } else {
-//     console.log('successfully added new user! result2 is:', result2);
-//   }
-// });
+const addWord = (req, res) => {
+  const newWordObj = {
+    name: req.body.name,
+    def: req.body.def,
+    syn: req.body.syn,
+    ant: req.body.ant,
+  };
+  console.log('newWordObj', newWordObj);
 
-db.get();
-db.set();
+  db.set(newWordObj.name, JSON.stringify(newWordObj), (error, result) => {
+    if (error) {
+      console.log('Error in setting:', error);
+    } else {
+      console.log('stringified newWordObj from setting', JSON.stringify(newWordObj));
+      console.log('result from setting', result);
+      res.send(newWordObj);
+    }
+  });
+};
 
-export default db;
+const searchWord = (req, res) => {
+  const wordObj = req.body;
+
+  db.get(wordObj.name, (error, result) => {
+    if (error) {
+      console.log('Error in getting:', error);
+    } else {
+      console.log('stringified wordObj from getting', db.get(JSON.stringify(wordObj)));
+      console.log('result from getting', result);
+      res.send(wordObj);
+    }
+  });
+};
+
+export default { searchWord, addWord };
