@@ -46,6 +46,6 @@
     "redis": "^2.6.2",
     "text-calculator": "^1.1.0",
     "yelp": "^1.0.1",
-    "youtube-node": "^1.3.0",
+    "youtube-node": "^1.3.0"
   }
 }
