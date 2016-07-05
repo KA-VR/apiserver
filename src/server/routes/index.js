@@ -6,6 +6,8 @@ import calculatorController from '../controllers/calculatorController';
 import mongoController from '../controllers/mongoController';
 import youtubeController from '../controllers/youtubeController';
 import yelpController from '../controllers/yelpController';
+import quotesController from '../controllers/quotesController';
+// import soundcloud from '../controllers/soundcloudController';
 import redis from '../../dictionary/redisDictionary';
 
 const router = new Router();
@@ -31,5 +33,12 @@ router.route('/api/yelp').post(yelpController.searchYelp);
 
 router.route('/api/writeredis').post(redis.addWord);
 router.route('/api/searchredis').post(redis.searchWord);
+
+// router.route('/api/userfavorites').post(soundcloud.findUsersFavorites);
+// router.route('/api/userplaylist').post(soundcloud.findUsersPlaylist);
+// router.route('/api/searchgenre').post(soundcloud.searchGenre);
+// router.route('/api/searchquery').post(soundcloud.searchQuery);
+
+router.route('/api/quote').post(quotesController.getInspirationalQuotes);
 
 export default router;
