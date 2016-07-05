@@ -15,3 +15,6 @@ node_modules
 
 # Ignore ENV
 .env
+
+#Ignore dump file
+dump.rdb
