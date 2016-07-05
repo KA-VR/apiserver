@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import lruCache from 'lru-cache';
+// import lruCache from 'lru-cache';
 import redis from 'redis';
 const db = redis.createClient();
 
