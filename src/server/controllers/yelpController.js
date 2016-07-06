@@ -9,17 +9,8 @@ const yelp = new Yelp({
   token_secret: process.env.YELP_TOKEN_SECRET,
 });
 
-const defaultParams = {
-  location: 'San Francisco',
-  term: 'food',
-  limit: 5,
-  sort: 0,
-  radius_filter: 3200,
-};
-
 // Restaurant Search
 const searchYelp = (req, res) => {
-  // const searchQuery = Object.keys(req.body).length ? req.body : defaultParams;
   const searchQuery = {
     location: req.body.query || 'San Francisco',
     term: req.body.query || 'Lunch',
