@@ -12,7 +12,7 @@ const yelp = new Yelp({
 const defaultParams = {
   location: 'San Francisco',
   term: 'food',
-  limit: 1,
+  limit: 5,
   sort: 0,
   radius_filter: 3200,
 };
