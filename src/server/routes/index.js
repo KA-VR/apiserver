@@ -7,6 +7,8 @@ import mongoController from '../controllers/mongoController';
 import youtubeController from '../controllers/youtubeController';
 import yelpController from '../controllers/yelpController';
 import quotesController from '../controllers/quotesController';
+// import calendarController from '../controllers/calendarController';
+import mapsController from '../controllers/mapsController';
 // import soundcloud from '../controllers/soundcloudController';
 import redis from '../../dictionary/redisDictionary';
 
@@ -38,6 +40,9 @@ router.route('/api/searchredis').post(redis.searchWord);
 // router.route('/api/userplaylist').post(soundcloud.findUsersPlaylist);
 // router.route('/api/searchgenre').post(soundcloud.searchGenre);
 // router.route('/api/searchquery').post(soundcloud.searchQuery);
+
+// router.route('/api/getcalendar').post(calendarController);
+router.route('/api/maps').post(mapsController.getMap);
 
 router.route('/api/quote').post(quotesController.getInspirationalQuotes);
 
