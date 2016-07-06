@@ -19,10 +19,31 @@ const defaultParams = {
 
 // Restaurant Search
 const searchYelp = (req, res) => {
-  const searchQuery = Object.keys(req.body).length ? req.body : defaultParams;
+  // const searchQuery = Object.keys(req.body).length ? req.body : defaultParams;
+  const searchQuery = {
+    location: req.body.query || 'San Francisco',
+    term: req.body.query || 'Lunch',
+    limit: 5,
+    sort: 0,
+  };
   yelp.search(searchQuery)
-    .then(data => {
-      res.send(JSON.stringify(data));
+    .then(yelpresults => {
+      const results = yelpresults.businesses;
+      const shops = results.map(shop => {
+        return {
+          name: shop.name,
+          url: shop.url,
+          location: shop.location.display_address[0],
+          city: shop.location.city,
+          state: shop.location.state_code,
+          zip: shop.location.postal_code,
+          reviews: shop.review_count,
+          image: shop.image_url,
+          rating: shop.rating,
+          text: shop.snippet_text,
+        };
+      });
+      res.send({ shops });
     })
     .catch(err => {
       if (err) {
