@@ -20,8 +20,8 @@ const searchYelp = (req, res) => {
   yelp.search(searchQuery)
     .then(yelpresults => {
       const results = yelpresults.businesses;
-      const shops = results.map(shop => {
-        return {
+      const shops = results.map(shop => (
+        {
           name: shop.name,
           url: shop.url,
           location: shop.location.display_address[0],
@@ -32,8 +32,8 @@ const searchYelp = (req, res) => {
           image: shop.image_url,
           rating: shop.rating,
           text: shop.snippet_text,
-        };
-      });
+        })
+      );
       res.send({ shops });
     })
     .catch(err => {
