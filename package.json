@@ -45,7 +45,7 @@
     "lru-cache": "^4.0.1",
     "mongoose": "^4.5.3",
     "node-soundcloud": "0.0.5",
-    "openweather": "^0.4.0",
+    "openweather": "^1.0.4",
     "redis": "^2.6.2",
     "text-calculator": "^1.1.0",
     "yelp": "^1.0.1",

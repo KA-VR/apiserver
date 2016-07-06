@@ -1,12 +1,14 @@
-import openWeather from 'openweather';
+/* eslint-disable no-console */
+import openweather from 'openweather';
 
 const getWeather = (req, res) => {
   const key = req.body.key || null;
-  const coords = {
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
+  console.log('req is', req.body);
+  console.log('openWeather', openweather);
+  const queryObj = {
+    city: req.body.query,
   };
-  openWeather.getWeather(coords, (result) => res.send(result), key);
+  openweather.openWeather(queryObj, (result) => res.send(result), key);
 };
 
 export default { getWeather };
