@@ -4,6 +4,7 @@
   "description": "API server for services",
   "main": "index.js",
   "scripts": {
+    "build": "babel src --out-dir prod",
     "ci": "npm test && npm run dev",
     "dev-server": "nodemon --delay 1.5 dev/server/server.js",
     "dev": "npm run lint && (npm run watch-server & npm run dev-server)",
@@ -11,7 +12,8 @@
     "test:watch": "mocha tests/client/components/* --compilers js:babel-core/register --watch --reporter min",
     "lint": "eslint --quiet src/",
     "start": "npm run watch-server & npm run dev-server",
-    "watch-server": "babel --watch src -d dev"
+    "start:production": "node ./prod/server/server.js",
+    "watch-server": "babel --watch src -d prod"
   },
   "repository": {
     "type": "git",
