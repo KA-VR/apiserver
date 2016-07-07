@@ -7,6 +7,8 @@ const getWeather = (req, res) => {
   console.log('openWeather', openweather);
   const queryObj = {
     city: req.body.query,
+    longitude: req.body.longitude,
+    latitude: req.body.latitude,
   };
   openweather.openWeather(queryObj, (result) => res.send(result), key);
 };
