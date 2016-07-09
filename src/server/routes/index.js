@@ -10,7 +10,7 @@ import quotesController from '../controllers/quotesController';
 // import calendarController from '../controllers/calendarController';
 import mapsController from '../controllers/mapsController';
 // import soundcloud from '../controllers/soundcloudController';
-import redis from '../../dictionary/redisDictionary';
+// import redis from '../../dictionary/redisDictionary';
 
 const router = new Router();
 
@@ -33,8 +33,8 @@ router.route('/api/youtube').post(youtubeController.searchVideo);
 
 router.route('/api/yelp').post(yelpController.searchYelp);
 
-router.route('/api/writeredis').post(redis.addWord);
-router.route('/api/searchredis').post(redis.searchWord);
+// router.route('/api/writeredis').post(redis.addWord);
+// router.route('/api/searchredis').post(redis.searchWord);
 
 // router.route('/api/userfavorites').post(soundcloud.findUsersFavorites);
 // router.route('/api/userplaylist').post(soundcloud.findUsersPlaylist);
