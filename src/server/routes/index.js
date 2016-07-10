@@ -8,7 +8,7 @@ import youtubeController from '../controllers/youtubeController';
 import yelpController from '../controllers/yelpController';
 import quotesController from '../controllers/quotesController';
 import mapsController from '../controllers/mapsController';
-import redis from '../../dictionary/redisDictionary';
+// import redis from '../../dictionary/redisDictionary';
 
 const router = new Router();
 
@@ -31,8 +31,8 @@ router.route('/api/youtube').post(youtubeController.searchVideo);
 
 router.route('/api/yelp').post(yelpController.searchYelp);
 
-router.route('/api/writeredis').post(redis.addWord);
-router.route('/api/searchredis').post(redis.searchWord);
+// router.route('/api/writeredis').post(redis.addWord);
+// router.route('/api/searchredis').post(redis.searchWord);
 
 router.route('/api/maps').post(mapsController.getMap);
 
