@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 import helpers from '../../dictionary/helpers';
 
-mongoose.connect('mongodb://localhost/dictionary');
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

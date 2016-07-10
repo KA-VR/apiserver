@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 // import lruCache from 'lru-cache';
 import redis from 'redis';
-const db = redis.createClient();
+const db = redis.createClient({
+  host: process.env.DB_PORT_6379_TCP_ADDR || '127.0.0.1',
+});
 
 db.on('connect', () => {
   console.log('I am connected to redis!');
