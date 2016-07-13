@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
 import mongoose from 'mongoose';
 import helpers from '../../dictionary/helpers';
+import dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect('mongodb://localhost/dictionary');
+console.log(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
